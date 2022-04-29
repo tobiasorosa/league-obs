@@ -4,22 +4,36 @@ import {
 	GetStaticProps,
 	NextPage,
 } from 'next';
+import client from '~src/utils/apollo-client';
 import axios from 'axios';
 import React from 'react';
 import { Text } from '@chakra-ui/react';
+import { GET_PROFILE } from '~/src/queries/profile/get-profile';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
 	const region = context.params?.region;
+	const regionUpper = region?.toString().toUpperCase();
 
-	const apiUrl = process.env.LEAGUE_API_URL;
-	const apiUrlPath = `${apiUrl}/profile/${name}/${region
-		?.toString()
-		.toUpperCase()}`;
+	// const apiUrl = process.env.LEAGUE_API_URL;
+	// const apiUrlPath = `${apiUrl}/profile/${name}/${region
+	// 	?.toString()
+	// 	.toUpperCase()}`;
+
+	// let profileData = null;
+	// try {
+	// 	const { data } = await axios.get(apiUrlPath);
+	// 	profileData = data;
+	// } catch (err) {
+	// 	console.log(err);
+	// }
 
 	let profileData = null;
 	try {
-		const { data } = await axios.get(apiUrlPath);
+		const { data, loading, error } = await client.query({
+			query: GET_PROFILE,
+			variables: { name, region: regionUpper },
+		});
 		profileData = data;
 	} catch (err) {
 		console.log(err);
