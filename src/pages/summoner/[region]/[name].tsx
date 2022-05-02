@@ -9,6 +9,8 @@ import axios from 'axios';
 import React from 'react';
 import { Text } from '@chakra-ui/react';
 import { GET_PROFILE } from '~/src/queries/profile/get-profile';
+import { ProfileDto } from '~/src/types/ProfileDto';
+import Header from '~/src/components/app/Header';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
@@ -34,7 +36,7 @@ export const getStaticProps: GetStaticProps = async context => {
 			query: GET_PROFILE,
 			variables: { name, region: regionUpper },
 		});
-		profileData = data;
+		profileData = data.profile;
 	} catch (err) {
 		console.log(err);
 	}
@@ -61,7 +63,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 interface SummonerResultProps {
-	profileData: any;
+	profileData: ProfileDto;
 }
 
 const PageResultPage: NextPage<SummonerResultProps> = props => {
@@ -69,7 +71,8 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 	console.log(profileData);
 	return (
 		<>
-			<Text>Teste</Text>
+			<Header />
+			<Text>{profileData.summoner.name}</Text>
 		</>
 	);
 };

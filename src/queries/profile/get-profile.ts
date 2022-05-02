@@ -68,7 +68,6 @@ export const GET_PROFILE = gql`
 						wardsPlaced
 						detectorWardsPlaced
 						goldEarned
-						teamPosition
 						largestMultiKill
 						item0
 						item1
@@ -80,6 +79,8 @@ export const GET_PROFILE = gql`
 						itemsPurchased
 						puuid
 						role
+						summonerName
+						teamPosition
 					}
 				}
 			}
