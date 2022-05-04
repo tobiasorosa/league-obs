@@ -7,10 +7,11 @@ import {
 import client from '~src/utils/apollo-client';
 import axios from 'axios';
 import React from 'react';
-import { Text } from '@chakra-ui/react';
+import { Box, Container, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import { GET_PROFILE } from '~/src/queries/profile/get-profile';
 import { ProfileDto } from '~/src/types/ProfileDto';
 import Header from '~/src/components/app/Header';
+import * as Summoner from '~src/components/summoner';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
@@ -72,7 +73,19 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 	return (
 		<>
 			<Header />
-			<Text>{profileData.summoner.name}</Text>
+
+			<Container maxW='container.xl' m='auto' mt={10}>
+				<Stack>
+					<Summoner.ProfileCard
+						iconId={profileData.summoner.profileIconId}
+						name={profileData.summoner.name}
+						level={profileData.summoner.summonerLevel}
+					/>
+					<VStack>
+						<Text>Here is the matches</Text>
+					</VStack>
+				</Stack>
+			</Container>
 		</>
 	);
 };
