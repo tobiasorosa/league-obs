@@ -11,9 +11,18 @@ export const GET_PROFILE = gql`
 				summonerLevel
 				accountId
 			}
+			summonerRank {
+				queueType
+				tier
+				rank
+				leaguePoints
+				wins
+				losses
+			}
 			firstMatchesData {
 				metadata {
 					participants
+					matchId
 				}
 				info {
 					teams {
@@ -79,8 +88,10 @@ export const GET_PROFILE = gql`
 						itemsPurchased
 						puuid
 						role
+						summonerId
 						summonerName
 						teamPosition
+						teamId
 					}
 				}
 			}

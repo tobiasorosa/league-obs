@@ -10,7 +10,7 @@ interface ProfileCardProps {
 
 export const ProfileCard = (props: ProfileCardProps) => {
 	return (
-		<Stack direction={{ base: 'column', md: 'row' }}>
+		<HStack align='flex-start'>
 			<Image
 				alt='Summoner Icon'
 				src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/profileicon/${props.iconId}.png`}
@@ -24,6 +24,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 				<Divider />
 				<Text>Level: {props.level}</Text>
 			</Stack>
-		</Stack>
+		</HStack>
 	);
 };

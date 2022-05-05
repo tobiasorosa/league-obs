@@ -75,15 +75,17 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 			<Header />
 
 			<Container maxW='container.xl' m='auto' mt={10}>
-				<Stack>
+				<Stack direction='column'>
 					<Summoner.ProfileCard
 						iconId={profileData.summoner.profileIconId}
 						name={profileData.summoner.name}
 						level={profileData.summoner.summonerLevel}
 					/>
-					<VStack>
-						<Text>Here is the matches</Text>
-					</VStack>
+
+					<Summoner.ProfileMatches
+						firstMatches={profileData.firstMatchesData}
+						summoner={profileData.summoner}
+					/>
 				</Stack>
 			</Container>
 		</>
