@@ -92,6 +92,17 @@ export const GET_PROFILE = gql`
 						summonerName
 						teamPosition
 						teamId
+						summoner1Id
+						summoner2Id
+						perks {
+							styles {
+								description
+								selections {
+									perk
+								}
+								style
+							}
+						}
 					}
 				}
 			}
