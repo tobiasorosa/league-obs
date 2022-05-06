@@ -24,7 +24,6 @@ export const ProfileMatchStats = ({
 	const kda = ((kills + assists) / deaths).toFixed(2);
 	const participation = (((kills + assists) / totalKillsTeam) * 100).toFixed(0);
 	const csPerMinute = (cs / (matchDuration / 60)).toFixed(1);
-	console.log(csPerMinute);
 
 	return (
 		<Stack pt={{ base: 1, md: 4 }} direction='row'>
