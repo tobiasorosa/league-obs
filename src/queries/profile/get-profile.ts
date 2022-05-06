@@ -69,9 +69,7 @@ export const GET_PROFILE = gql`
 						deaths
 						totalDamageDealtToChampions
 						totalMinionsKilled
-						baronKills
 						champLevel
-						championId
 						championTransform
 						championName
 						wardsPlaced

@@ -15,7 +15,7 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 100) {
 						return (
-							<ListItem w='100px' h='20px' isTruncated>
+							<ListItem w='100px' h='18px' isTruncated>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'
@@ -29,7 +29,7 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 								<Link
 									href={`${participant.summonerName}`}
 									target='_blank'
-									fontSize='14px'
+									fontSize='13px'
 									pl={1}
 								>
 									{participant.summonerName}
@@ -44,7 +44,7 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 200) {
 						return (
-							<ListItem w='100px' h='20px' isTruncated>
+							<ListItem w='100px' h='18px' isTruncated>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'
@@ -58,7 +58,7 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 								<Link
 									href={`${participant.summonerName}`}
 									target='_blank'
-									fontSize='14px'
+									fontSize='13px'
 									pl={1}
 								>
 									{participant.summonerName}

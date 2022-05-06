@@ -1,6 +1,5 @@
 import { Box, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
 import { MatchDto, SummonerDto } from '~/src/types/ProfileDto';
 import { ProfileMatchesMainSummoner } from './ProfileMatchesMainSummoner';
 import { ProfileMatchesParticipants } from './ProfileMatchesParticipants';
