@@ -82,10 +82,15 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 						level={profileData.summoner.summonerLevel}
 					/>
 
-					<Summoner.ProfileMatches
-						firstMatches={profileData.firstMatchesData}
-						summoner={profileData.summoner}
-					/>
+					<Stack direction='row' gap={4}>
+						<Box w='240px' bg='gray.400' py={2} rounded={2} px={2}>
+							<Text>Box w/ total matches</Text>
+						</Box>
+						<Summoner.ProfileMatches
+							firstMatches={profileData.firstMatchesData}
+							summoner={profileData.summoner}
+						/>
+					</Stack>
 				</Stack>
 			</Container>
 		</>
