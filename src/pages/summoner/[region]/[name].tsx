@@ -74,7 +74,7 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 		<>
 			<Header />
 
-			<Container maxW='container.xl' m='auto' mt={10}>
+			<Container maxW='container.lg' m='auto' mt={10}>
 				<Stack direction='column'>
 					<Summoner.ProfileCard
 						iconId={profileData.summoner.profileIconId}
@@ -82,8 +82,8 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 						level={profileData.summoner.summonerLevel}
 					/>
 
-					<Stack direction='row' gap={4}>
-						<Box w='240px' bg='gray.400' py={2} rounded={2} px={2}>
+					<Stack direction={{ base: 'column', lg: 'row' }} gap={2}>
+						<Box w='300px' bg='gray.400' py={2} rounded={2} px={2}>
 							<Text>Box w/ total matches</Text>
 						</Box>
 						<Summoner.ProfileMatches

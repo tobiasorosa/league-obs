@@ -26,33 +26,37 @@ export const ProfileMatchStats = ({
 	const csPerMinute = (cs / (matchDuration / 60)).toFixed(1);
 
 	return (
-		<Stack pt={{ base: 1, md: 4 }} direction='row'>
-			<Stack width={100}>
+		<Stack align='center' direction='row'>
+			<Stack width='70px'>
 				<HStack justify='center'>
-					<Text as='span'>{kills} / </Text>
-					<Text as='span' color='red'>
+					<Text as='span' fontSize='14px'>
+						{kills} /{' '}
+					</Text>
+					<Text as='span' color='red' fontSize='14px'>
 						{deaths}
 					</Text>{' '}
-					<Text as='span'>/ {assists}</Text>
+					<Text as='span' fontSize='14px'>
+						/ {assists}
+					</Text>
 				</HStack>
 				<HStack mt='0 !important' justify='center'>
-					<Text as='span' fontSize='14px' fontWeight='500'>
+					<Text as='span' fontSize='12px' fontWeight='500'>
 						{kda}:1
 					</Text>
-					<Text as='span' fontSize='14px' color='gray.500'>
+					<Text as='span' fontSize='12px' color='gray.500'>
 						KDA
 					</Text>
 				</HStack>
 			</Stack>
 			<Stack align='center' width={90}>
-				<Text as='span' fontSize='14px'>
+				<Text as='span' fontSize='12px'>
 					Level {level}
 				</Text>
-				<Text as='span' fontSize='14px' mt='0 !important'>
+				<Text as='span' fontSize='12px' mt='0 !important'>
 					{cs} CS ({csPerMinute})
 				</Text>
-				<Text as='span' fontSize='14px' color='red.700' mt='0 !important'>
-					Kills Part. {participation}%
+				<Text as='span' fontSize='12px' color='red.700' mt='0 !important'>
+					K/Part. {participation}%
 				</Text>
 			</Stack>
 		</Stack>

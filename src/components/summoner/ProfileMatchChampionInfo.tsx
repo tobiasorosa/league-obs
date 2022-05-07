@@ -13,7 +13,7 @@ export const ProfileMatchChampionInfo = (props: ChampionInfoProps) => {
 
 	return (
 		<Stack align='center' justify='center'>
-			<HStack>
+			<Stack direction={{ base: 'column', md: 'row' }}>
 				<ChakraNextImage
 					src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 						championName === 'FiddleSticks' ? 'Fiddlesticks' : championName
@@ -23,7 +23,7 @@ export const ProfileMatchChampionInfo = (props: ChampionInfoProps) => {
 					height='46px'
 					rounded={50}
 				/>
-				<VStack gap={1}>
+				<Stack gap={1} direction={{ base: 'row', md: 'column' }}>
 					<ChakraNextImage
 						src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/Summoner${firstSpellName}.png`}
 						alt={firstSpellName}
@@ -38,9 +38,8 @@ export const ProfileMatchChampionInfo = (props: ChampionInfoProps) => {
 						height='20px'
 						rounded={4}
 					/>
-				</VStack>
-			</HStack>
-			<Text fontSize='14px'>{championName}</Text>
+				</Stack>
+			</Stack>
 		</Stack>
 	);
 };

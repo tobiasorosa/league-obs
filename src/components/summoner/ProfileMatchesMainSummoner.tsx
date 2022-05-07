@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { getSpellName } from '~/src/utils/get-spell-name';
 import { ProfileMatchChampionInfo } from './ProfileMatchChampionInfo';
 import { ProfileMatchStats } from './ProfileMatchStats';
+import { ProfileMatchItems } from './ProfileMatchItems';
 
 interface MatchesMainSummonerProps {
 	match: MatchDto;
@@ -34,6 +35,15 @@ export const ProfileMatchesMainSummoner = (props: MatchesMainSummonerProps) => {
 		it => it.teamId === mainSummoner?.teamId
 	)?.objectives.champion.kills!;
 
+	const items = [
+		mainSummoner?.item0,
+		mainSummoner?.item1,
+		mainSummoner?.item2,
+		mainSummoner?.item3,
+		mainSummoner?.item4,
+		mainSummoner?.item5,
+	];
+
 	return (
 		<Stack direction='row'>
 			<ProfileMatchChampionInfo
@@ -47,6 +57,8 @@ export const ProfileMatchesMainSummoner = (props: MatchesMainSummonerProps) => {
 				totalKillsTeam={totalKillsTeam}
 				matchDuration={match.info.gameDuration}
 			/>
+
+			<ProfileMatchItems items={items} trincket={mainSummoner?.item6} />
 		</Stack>
 	);
 };
