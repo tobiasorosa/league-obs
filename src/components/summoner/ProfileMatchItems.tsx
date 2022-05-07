@@ -1,11 +1,4 @@
-import {
-	Box,
-	ListItem,
-	SimpleGrid,
-	Stack,
-	UnorderedList,
-	VStack,
-} from '@chakra-ui/react';
+import { ListItem, Stack, UnorderedList } from '@chakra-ui/react';
 import ChakraNextImage from '../app/ChakraNextImage';
 
 interface MathItemsProps {
@@ -16,7 +9,6 @@ interface MathItemsProps {
 export const ProfileMatchItems = (props: MathItemsProps) => {
 	const { items, trincket } = props;
 
-	console.log(items);
 	return (
 		<>
 			<Stack justify='center'>
@@ -41,6 +33,7 @@ export const ProfileMatchItems = (props: MathItemsProps) => {
 								rounded={2}
 								mt='0 !important'
 								display='inline-block'
+								mr={1}
 							/>
 						)
 					)}

@@ -1,4 +1,4 @@
-import { HStack, Stack, Text, VStack } from '@chakra-ui/react';
+import { HStack, Stack, Text } from '@chakra-ui/react';
 
 interface IStats {
 	kills: number;

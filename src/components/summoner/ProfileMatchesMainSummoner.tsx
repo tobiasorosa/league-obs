@@ -1,10 +1,7 @@
-import { Center, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { MatchDto } from '~/src/types/ProfileDto';
-import Image from 'next/image';
 import { getSpellName } from '~/src/utils/get-spell-name';
-import { ProfileMatchChampionInfo } from './ProfileMatchChampionInfo';
-import { ProfileMatchStats } from './ProfileMatchStats';
-import { ProfileMatchItems } from './ProfileMatchItems';
+import * as Profile from '~src/components/summoner';
 
 interface MatchesMainSummonerProps {
 	match: MatchDto;
@@ -17,6 +14,9 @@ export const ProfileMatchesMainSummoner = (props: MatchesMainSummonerProps) => {
 	const mainSummoner = match.info.participants.find(
 		it => it.summonerId === summonerId
 	)!;
+
+	const result = match.info.teams.find(it => it.teamId === mainSummoner.teamId)
+		?.win!;
 
 	const firstSpellName = getSpellName(mainSummoner?.summoner1Id);
 	const secondSpellName = getSpellName(mainSummoner?.summoner2Id);
@@ -46,19 +46,24 @@ export const ProfileMatchesMainSummoner = (props: MatchesMainSummonerProps) => {
 
 	return (
 		<Stack direction='row'>
-			<ProfileMatchChampionInfo
+			<Profile.ProfileMatchGameInfo
+				result={result}
+				gameDuration={match.info.gameDuration}
+			/>
+
+			<Profile.ProfileMatchChampionInfo
 				championName={summonerChampionName}
 				firstSpellName={firstSpellName}
 				secondSpellName={secondSpellName}
 			/>
 
-			<ProfileMatchStats
+			<Profile.ProfileMatchStats
 				stats={stats}
 				totalKillsTeam={totalKillsTeam}
 				matchDuration={match.info.gameDuration}
 			/>
 
-			<ProfileMatchItems items={items} trincket={mainSummoner?.item6} />
+			<Profile.ProfileMatchItems items={items} trincket={mainSummoner?.item6} />
 		</Stack>
 	);
 };

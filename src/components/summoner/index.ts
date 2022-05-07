@@ -5,3 +5,4 @@ export * from './ProfileMatchesMainSummoner';
 export * from './ProfileMatchChampionInfo';
 export * from './ProfileMatchStats';
 export * from './ProfileMatchItems';
+export * from './ProfileMatchGameInfo';
