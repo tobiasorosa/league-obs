@@ -6,6 +6,7 @@ import { GET_PROFILE } from '~/src/queries/profile/get-profile';
 import { ProfileDto } from '~/src/types/ProfileDto';
 import Header from '~/src/components/app/Header';
 import * as Summoner from '~src/components/summoner';
+import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
@@ -53,6 +54,9 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 	console.log(profileData);
 	return (
 		<>
+			<Head>
+				<title>{profileData.summoner.name} - Summoner</title>
+			</Head>
 			<Header />
 
 			<Container maxW='container.lg' m='auto' mt={10}>

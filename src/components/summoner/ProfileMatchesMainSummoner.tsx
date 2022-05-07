@@ -48,7 +48,11 @@ export const ProfileMatchesMainSummoner = (props: MatchesMainSummonerProps) => {
 		<Stack direction='row'>
 			<Profile.ProfileMatchGameInfo
 				result={result}
-				gameDuration={match.info.gameDuration}
+				gameInfo={{
+					mode: match.info.queueId,
+					endTime: match.info.gameEndTimestamp,
+					duration: match.info.gameDuration,
+				}}
 			/>
 
 			<Profile.ProfileMatchChampionInfo

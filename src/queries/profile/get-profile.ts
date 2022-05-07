@@ -25,6 +25,7 @@ export const GET_PROFILE = gql`
 					matchId
 				}
 				info {
+					queueId
 					teams {
 						bans {
 							championId
@@ -60,9 +61,7 @@ export const GET_PROFILE = gql`
 						win
 					}
 					gameDuration
-					gameCreation
 					gameEndTimestamp
-					gameMode
 					participants {
 						assists
 						kills
