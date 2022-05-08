@@ -27,6 +27,7 @@ export const ProfileMatchGameInfo = (props: MathGameInfoProps) => {
 			justify='center'
 			direction='column'
 			display={{ base: 'none', md: 'flex' }}
+			maxW='75px'
 		>
 			<Text textAlign='center' fontSize='14px' isTruncated>
 				{getQueueType(mode)}

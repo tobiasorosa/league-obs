@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/react';
+import { Stack, Text } from '@chakra-ui/react';
 import ChakraNextImage from '../app/ChakraNextImage';
 
 interface ChampionInfoProps {
@@ -39,6 +39,9 @@ export const ProfileMatchChampionInfo = (props: ChampionInfoProps) => {
 					/>
 				</Stack>
 			</Stack>
+			<Text as='span' fontSize={14}>
+				{championName}
+			</Text>
 		</Stack>
 	);
 };

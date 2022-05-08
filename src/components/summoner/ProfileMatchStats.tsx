@@ -48,7 +48,7 @@ export const ProfileMatchStats = ({
 					</Text>
 				</HStack>
 			</Stack>
-			<Stack align='center' width={90}>
+			<Stack align='center' width='70px'>
 				<Text as='span' fontSize='12px'>
 					Level {level}
 				</Text>

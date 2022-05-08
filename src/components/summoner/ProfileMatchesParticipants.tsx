@@ -11,11 +11,11 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 
 	return (
 		<>
-			<UnorderedList listStyleType='none'>
+			<UnorderedList listStyleType='none' ml='0 !important'>
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 100) {
 						return (
-							<ListItem w='100px' h='18px' isTruncated>
+							<ListItem w='80px' h='18px' isTruncated>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'
@@ -44,7 +44,7 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 200) {
 						return (
-							<ListItem w='100px' h='18px' isTruncated>
+							<ListItem w='80px' h='18px' isTruncated>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'
