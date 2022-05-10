@@ -5,8 +5,8 @@ import { Box, Container, Stack, Text } from '@chakra-ui/react';
 import { GET_PROFILE } from '~/src/queries/profile/get-profile';
 import { ProfileDto } from '~/src/types/ProfileDto';
 import Header from '~/src/components/app/Header';
-import * as Summoner from '~src/components/summoner';
 import Head from 'next/head';
+import { Matches, SummonerCard } from '~/src/components/profile';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
@@ -61,7 +61,7 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 
 			<Container maxW='container.lg' m='auto' mt={10}>
 				<Stack direction='column'>
-					<Summoner.ProfileCard
+					<SummonerCard
 						iconId={profileData.summoner.profileIconId}
 						name={profileData.summoner.name}
 						level={profileData.summoner.summonerLevel}
@@ -71,7 +71,7 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 						<Box w='300px' bg='gray.400' py={2} rounded={2} px={2}>
 							<Text>Box w/ total matches</Text>
 						</Box>
-						<Summoner.ProfileMatches
+						<Matches
 							firstMatches={profileData.firstMatchesData}
 							summoner={profileData.summoner}
 						/>

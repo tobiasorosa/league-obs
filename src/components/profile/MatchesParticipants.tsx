@@ -6,7 +6,7 @@ interface MatchesParticipantsProps {
 	match: MatchDto;
 }
 
-export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
+export const MatchesParticipants = (props: MatchesParticipantsProps) => {
 	const { match } = props;
 
 	return (
@@ -15,7 +15,12 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 100) {
 						return (
-							<ListItem w='80px' h='18px' isTruncated>
+							<ListItem
+								w='80px'
+								h='18px'
+								isTruncated
+								key={participant.summonerId}
+							>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'
@@ -44,7 +49,12 @@ export const ProfileMatchesParticipants = (props: MatchesParticipantsProps) => {
 				{match.info.participants.map(participant => {
 					if (participant.teamId === 200) {
 						return (
-							<ListItem w='80px' h='18px' isTruncated>
+							<ListItem
+								w='80px'
+								h='18px'
+								isTruncated
+								key={participant.summonerId}
+							>
 								<Image
 									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${
 										participant.championName === 'FiddleSticks'

@@ -11,7 +11,7 @@ interface MathGameInfoProps {
 	};
 }
 
-export const ProfileMatchGameInfo = (props: MathGameInfoProps) => {
+export const MatchGameInfo = (props: MathGameInfoProps) => {
 	const { result } = props;
 	const { mode, endTime, duration } = props.gameInfo;
 
@@ -29,17 +29,17 @@ export const ProfileMatchGameInfo = (props: MathGameInfoProps) => {
 			display={{ base: 'none', md: 'flex' }}
 			maxW='75px'
 		>
-			<Text textAlign='center' fontSize='14px' isTruncated>
+			<Text textAlign='center' fontSize='12px' isTruncated>
 				{getQueueType(mode)}
 			</Text>
-			<Text textAlign='center' fontSize='14px'>
-				{endedGame.replace('about', '')}
+			<Text textAlign='center' fontSize='12px'>
+				{endedGame.replace('about', '').replace('minutes', 'min')}
 			</Text>
 			<Divider />
 			<Text textAlign='center' color={result ? 'blue.500' : 'red.500'}>
 				{result ? 'Victory' : 'Defeat'}
 			</Text>
-			<Text textAlign='center' fontSize='14px'>
+			<Text textAlign='center' fontSize='12px'>
 				{minutes}:{seconds}
 			</Text>
 		</Flex>

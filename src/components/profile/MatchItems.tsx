@@ -6,7 +6,7 @@ interface MathItemsProps {
 	trincket: number;
 }
 
-export const ProfileMatchItems = (props: MathItemsProps) => {
+export const MatchItems = (props: MathItemsProps) => {
 	const { items, trincket } = props;
 
 	return (

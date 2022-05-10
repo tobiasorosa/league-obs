@@ -14,7 +14,7 @@ interface MatchStatsProps {
 	matchDuration: number;
 }
 
-export const ProfileMatchStats = ({
+export const MatchStats = ({
 	stats,
 	totalKillsTeam,
 	matchDuration,

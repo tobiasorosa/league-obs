@@ -8,7 +8,7 @@ interface ProfileCardProps {
 	level: number;
 }
 
-export const ProfileCard = (props: ProfileCardProps) => {
+export const SummonerCard = (props: ProfileCardProps) => {
 	return (
 		<HStack align='flex-start'>
 			<Image
