@@ -1,4 +1,5 @@
 import { ListItem, Stack, UnorderedList } from '@chakra-ui/react';
+import { generateKey } from '~/src/utils/generate-key';
 import ChakraNextImage from '../app/ChakraNextImage';
 
 interface MathItemsProps {
@@ -15,13 +16,12 @@ export const MatchItems = (props: MathItemsProps) => {
 				<UnorderedList styleType='none' w='80px' lineHeight='12px' ml={0}>
 					{items.map((item, i) =>
 						item !== 0 ? (
-							<ListItem display='inline-block' mr={1}>
+							<ListItem display='inline-block' mr={1} key={generateKey(item)}>
 								<ChakraNextImage
-									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/${items[i]}.png`}
+									src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/item/${item}.png`}
 									alt={`Item ${i}`}
 									width='22px'
 									height='22px'
-									key={item}
 									rounded={2}
 								/>
 							</ListItem>
@@ -34,6 +34,7 @@ export const MatchItems = (props: MathItemsProps) => {
 								mt='0 !important'
 								display='inline-block'
 								mr={1}
+								key={item}
 							/>
 						)
 					)}

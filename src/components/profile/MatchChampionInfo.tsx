@@ -17,8 +17,6 @@ export const MatchChampionInfo = (props: ChampionInfoProps) => {
 	const firstRune = getRuneStyleImg(runes[0].style);
 	const firstMainRune = getRuneImg(runes[0].selections[0].perk, runes[0].style);
 	const secondRune = getRuneStyleImg(runes[1].style);
-	console.log(`https://ddragon.canisback.com/img/${firstMainRune.spellImg}`);
-	console.log(firstMainRune.spellImg);
 
 	return (
 		<Stack align='center' justify='center'>

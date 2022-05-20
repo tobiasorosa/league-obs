@@ -1,4 +1,4 @@
-import * as spellJson from '~public/json/runes.json';
+import spellJson from '~public/json/runes.json';
 
 export function getRuneStyleImg(styleId: number) {
 	const style = spellJson.find(it => it.id === styleId);

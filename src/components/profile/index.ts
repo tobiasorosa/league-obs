@@ -7,3 +7,4 @@ export * from './MatchChampionInfo';
 export * from './MatchStats';
 export * from './MatchItems';
 export * from './MatchGameInfo';
+export * from './ProfileRank';

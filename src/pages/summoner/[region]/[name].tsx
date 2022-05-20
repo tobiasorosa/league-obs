@@ -6,7 +6,7 @@ import { GET_PROFILE } from '~/src/queries/profile/get-profile';
 import { ProfileDto } from '~/src/types/ProfileDto';
 import Header from '~/src/components/app/Header';
 import Head from 'next/head';
-import { Matches, SummonerCard } from '~/src/components/profile';
+import { Matches, ProfileRank, SummonerCard } from '~/src/components/profile';
 
 export const getStaticProps: GetStaticProps = async context => {
 	const name = context.params?.name;
@@ -69,7 +69,7 @@ const PageResultPage: NextPage<SummonerResultProps> = props => {
 
 					<Stack direction={{ base: 'column', lg: 'row' }} gap={2}>
 						<Box w='300px' bg='gray.400' py={2} rounded={2} px={2}>
-							<Text>Box w/ total matches</Text>
+							<ProfileRank rank={profileData.summonerRank} />
 						</Box>
 						<Matches
 							firstMatches={profileData.firstMatchesData}
